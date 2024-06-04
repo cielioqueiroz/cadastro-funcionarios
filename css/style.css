@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+button {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  height: 80%;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.header span {
+  font-weight: 900;
+  font-size: 20px;
+  color: rgb(34, 139, 34);
+}
+
+#new {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-color: rgb(34, 139, 34);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#new:hover {
+  background-color: rgb(28, 120, 28);
+}
+
+.divTable {
+  padding: 10px;
+  width: auto;
+  height: inherit;
+  overflow: auto;
+  border-radius: 0 0 15px 15px;
+  margin-top: 20px;
+}
+
+.divTable::-webkit-scrollbar {
+  width: 12px;
+  background-color: whitesmoke;
+}
+
+.divTable::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: darkgray;
+}
+
+table {
+  width: 100%;
+  border-spacing: 10px;
+  word-break: break-all;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: whitesmoke;
+}
+
+tr {
+  border-bottom: 1px solid rgb(238, 235, 235) !important;
+}
+
+tbody tr td {
+  vertical-align: text-top;
+  padding: 12px;
+  max-width: 50px;
+}
+
+thead tr th {
+  padding: 10px;
+  text-align: start;
+}
+
+tbody tr {
+  margin-bottom: 50px;
+}
+
+thead tr th.acao {
+  width: 100px !important;
+  text-align: center;
+}
+
+tbody tr td.acao {
+  text-align: center;
+}
+
+tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+td button {
+  border: none;
+  outline: none;
+  background: transparent;
+  transition: transform 0.3s ease;
+}
+
+td button:hover {
+  transform: scale(1.1);
+}
+
+td button i {
+  font-size: 25px;
+}
+
+td button i:first-child {
+  margin-right: 10px;
+}
+
+@media (max-width: 700px) {
+  body {
+    font-size: 10px;
+  }
+
+  .header span {
+    font-size: 15px;
+  }
+
+  #new {
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  thead tr th.acao {
+    width: auto !important;
+  }
+
+  td button i {
+    font-size: 20px !important;
+  }
+
+  td button i:first-child {
+    margin-right: 0;
+  }
+
+  .modal {
+    width: 90% !important;
+  }
+
+  .modal label {
+    font-size: 12px !important;
+  }
+}
+
+.modal-container, .modal-container-delete {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal, .modal-delete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: white;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal label, .modal-delete p {
+  font-size: 14px;
+  width: 100%;
+}
+
+.modal input {
+  width: 100%;
+  outline: none;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.modal input:focus {
+  border-color: rgb(34, 139, 34);
+  box-shadow: 0 0 5px rgba(34, 139, 34, 0.5);
+}
+
+.modal button, .modal-delete button {
+  width: 100%;
+  margin: 10px auto;
+  outline: none;
+  border-radius: 20px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(34, 139, 34);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.modal button:hover, .modal-delete button:hover {
+  background-color: rgb(28, 120, 28);
+}
+
+.active {
+  display: flex;
+}
+
+.active .modal, .active .modal-delete {
+  animation: modal 0.4s;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -60px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-radius: 15px;
+  margin-top: 20px;
+}
